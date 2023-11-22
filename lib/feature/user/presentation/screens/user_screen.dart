@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_architecture/feature/user/presentation/cubit/user_cubit.dart';
 import 'package:flutter_clean_architecture/feature/user/presentation/cubit/user_state.dart';
+import 'package:flutter_clean_architecture/feature/user/presentation/widgets/landing_widget.dart';
 
 class UserScreen extends StatelessWidget {
   const UserScreen({super.key});
@@ -12,12 +13,10 @@ class UserScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          body: Center(
-            child: state is GetUserSuccessfully
-                ? Text(state.user.name)
-                : state is GetUserFailure
-                    ? Text(state.errMessage)
-                    : const CircularProgressIndicator(),
+          body: ListView(
+            children: const [
+              LandingWidget(),
+            ],
           ),
         );
       },

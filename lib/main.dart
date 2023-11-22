@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create: (context) => UserCubit()..eitherFailureOrUser(1),
         child: const UserScreen(),
