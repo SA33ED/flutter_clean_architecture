@@ -14,7 +14,7 @@ import 'package:flutter_clean_architecture/feature/user/presentation/cubit/user_
 class UserCubit extends Cubit<UserState> {
   UserCubit() : super(UserInitial());
 
-  eitherFailureOrUser(id) async {
+  eitherFailureOrUser(int id) async {
     emit(GetUserLoading());
     final failureOrUser = await GetUser(
       repository: UserRepositoryImpl(

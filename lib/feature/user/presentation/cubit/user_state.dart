@@ -3,6 +3,7 @@ import 'package:flutter_clean_architecture/feature/user/domain/entities/user_ent
 class UserState {}
 
 final class UserInitial extends UserState {}
+final class UpdateSLider extends UserState {}
 
 final class GetUserSuccessfully extends UserState {
   final UserEntity user;
